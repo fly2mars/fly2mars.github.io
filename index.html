@@ -1,0 +1,925 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width initial-scale=1'>
+<meta name="keywords" content="Shanghai University,Yuan Yao">
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>
+html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write {
+	margin: 0px auto;
+	height: auto;
+	width: 940px;
+	word-break: normal;
+	overflow-wrap: break-word;
+	position: relative;
+	white-space: normal;
+	overflow-x: visible;
+	padding-top: 36px;
+}
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+#write ol li {
+}
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc {
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0));
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 0.7;
+}
+
+
+
+</style><title>Yao&#39;s homepage</title>
+</head>
+<body >
+<div id='write'  class=''><style type="text/css">
+			header, section, footer, aside, nav, article, figure, figcaption {
+				display: block;}
+			body {
+				color: #666666;
+				background-color: #f9f8f6;
+				background-image: url("imgs/background.jpg");
+				background-position: center;
+				font-family: Georgia, Times, serif;
+				line-height: 1.4em;
+				margin: 0px;}
+			.header_wrapper {
+				width: 940px;
+				margin: 20px auto 20px auto;
+				border: 1px solid #555555;
+				background-color: #ffffff;}
+            .body_wrapper {
+				width: 940px;
+				margin: 20px auto 20px auto;
+				border: 0px None;
+				}
+			header {
+				height: 160px;
+				background-image: url("images/header.jpg");}
+			h1 {
+				text-indent: -9999px;
+				width: 940px;
+				height: 130px;
+				margin: 0px;}
+			nav, footer {
+				clear: both;
+				color: #ffffff;
+				background-color: #aeaca8;
+				height: 30px;}
+			nav ul {
+				margin: 0px;
+				padding: 5px 0px 5px 30px;}
+			nav li {
+				display: inline;
+				margin-right: 40px;}
+			nav li a {
+				color: #ffffff;}
+			nav li a:hover, nav li a.current {
+				color: #000000;}
+			section.leftWindow {
+				float: left;
+				width: 659px;
+				border-right: 1px solid #eeeeee;}
+			article {
+				clear: both;
+				overflow: auto;
+				width: 100%;}
+			hgroup {
+				margin-top: 40px;}
+			figure {
+				float: left;
+				width: 290px;
+				height: 220px;
+				padding: 5px;
+				margin: 20px;
+				border: 1px solid #eeeeee;}
+			figcaption {
+				font-size: 90%;
+				text-align: left;}
+			aside {
+				width: 230px;
+				float: left;
+				padding: 0px 0px 0px 20px;}
+			aside section a {
+				display: block;
+				padding: 10px;
+				border-bottom: 1px solid #eeeeee;}
+			aside section a:hover {
+				color: #985d6a;
+				background-color: #efefef;}
+			a {
+				color: #de6581;
+				text-decoration: none;}
+			h1, h2, h3 {
+				font-weight: normal;}
+			h2 {
+				margin: 10px 0px 5px 0px;
+				padding: 0px;}
+			h3 {
+				margin: 0px 0px 10px 0px;
+				color: #de6581;}
+			aside h2 {
+				padding: 30px 0px 10px 0px;
+				color: #de6581;}
+			footer {
+				font-size: 80%;
+				padding: 7px 0px 0px 20px;}
+		</style>
+<div class="header_wrapper">
+  <nav>
+  <ul>
+	<li><a href="" class="current">Home</a></li>
+	<li><a href="#">Research</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="https://www.notion.so/My-GTD-62fbbf17378b4a78a4c7e621326fec8e">Schedule</a></li>
+  </ul>
+  </nav>
+<table style="border: 0px none">
+<tbody style="border: 0px none">
+<tr style="border: 0px none">
+<td width="180" style="border: 0px none"><img src="tmpls/imgs/yyao.png" width="150"></td>
+<td style="border: 0px none">
+  <div><h2 style="border-bottom: 0px none;">Yuan Yao</h2>
+    <span>Rapid Manufacturing Center, Shanghai University</span><br>
+    <span><a href="https://gczx.shu.edu.cn">Engineering Training Center, Shanghai University</span><br>
+    <span>yaoyuan@shu.edu.cn</span><br>
+    <span><a href="https://scholar.google.com/citations?user=7CCyy10AAAAJ&amp;hl=en">GoogleCitation</a></span>
+  </div>
+</td>
+</tr></tbody></table></div>
+
+
+<h3 id="research-interest"><span>Research Interest</span></h3>
+<p><div class="tooltip">Computational Fabrication
+  <!--<span class="tooltiptext">本方向招研究生学硕1名，研究功能驱动的沉积路径优化方法。</span>-->
+</div>, <div class="tooltip">Digital Manufacturing
+  <!--<span class="tooltiptext">本方向招研究生学硕1名，从事制造工艺、装备设计，以及智能控制方法相关研发工作。</span>-->
+</div>, Computer-aided Design, Biomanufacturing, Augmented Reality, and Robotics</p>
+
+<div class="body_wrapper">
+
+
+<table style="border: 0px none">
+<tbody style="border: 0px none">
+<tr style="border: 0px none">
+<td width="180" style="border: 0px none"><img src="research/imgs/weave.jpg" width="150"></td>
+<td style="border: 0px none">
+  <div><h2 style="border-bottom: 0px none;">Weaving path planning for FDM</h2>
+     <p style="text-align:justify; text-justify:inter-ideograph;">In order to strengthen the connection between layers in FFF process, this project presents a 3D weaving tool path that can be constructed by a 5-layer cyclic structure to achieve inter-layer interlocking or embedding to improve mechanical properties between layers. The developed algorithm extends the weaving path as a common infill pattern to fill different structures. This process can be realized with a common three-axis 3D printer. Compared with 3D printed parts with layer to layer deposit, the interlayer anisotropy are significantly reduced  to 10.21% and 0.98%. We further extend the planning method to adapt different geometric models.</p>
+    <span><a href="#">Project page</a></span><br>
+  </div>
+</td>
+</tr>
+</tbody></table>
+
+<table style="border: 0px none">
+<tbody style="border: 0px none">
+<tr style="border: 0px none">
+<td width="180" style="border: 0px none"><img src="research/imgs/continuousPathPrinting.gif" width="150"></td>
+<td style="border: 0px none">
+  <div><h2 style="border-bottom: 0px none;">Continuous fiber-reinforced 3D Printing</h2>
+     <p style="text-align:justify; text-justify:inter-ideograph;">In order to strengthen the connection between layers in FFF process, this project presents a 3D weaving tool  This project presents a method for printing fiber-reinforced composite on the common fused filament fabrication (FFF) platform. Polylactic Acid (PLA) and Polyethylene terephthalate (PET) fibers are used as printing materials. And a spatial continuous toolpath planning strategy is designedto reduce the workload of post-processing. Experimental results show that this process not only enables the printing of models with complex geometric shapes but also supports material recycling and reuse. Mechanical tests show that the maximum tensile strength of continuous PET fiber-reinforced thermoplastic composites (PFRTPCs) is increased by 117.8% compared to PA66.</p>
+    <span><a href="#">Project page</a></span><br>
+  </div>
+</td>
+</tr>
+</tbody></table>
+
+<table style="border: 0px none">
+<tbody style="border: 0px none">
+<tr style="border: 0px none">
+<td width="180" style="border: 0px none"><img src="research/imgs/mprinting.jpg" width="150"></td>
+<td style="border: 0px none">
+  <div><h2 style="border-bottom: 0px none;">3D printing by multiple axies robot arm</h2>
+     <p style="text-align:justify; text-justify:inter-ideograph;">In order to strengthen the connection between layers in FFF process, this project presents a 3D weaving tool This project aims transporting 3D printing softwares from 3-axis device to multi-axis robot arm platforms. The hardware system and software system are designed to synchronize the movement of TCP and the material feeding. Both continuous fiber-reinforced composite and the pure composite are supported as the printing material, and it can print on different spatial planes and curve planes. Compared with traditional 3D printing, this manufacturing method is flexible enough to fill material along a spatial path that can reduce the impact of the anisotropy of the mechanical properties of the fiber-reinforced material on the 3D printed structure.. </p>
+    <span><a href="#">Project page</a></span><br>
+  </div>
+</td>
+</tr>
+</tbody></table>
+
+<table style="border: 0px none">
+<tbody style="border: 0px none">
+<tr style="border: 0px none">
+<td width="180" style="border: 0px none"><img src="research/imgs/ruleTO.gif" width="150"></td>
+<td style="border: 0px none">
+  <div><h2 style="border-bottom: 0px none;">Rule-driven topology optimization</h2>
+    <p style="text-align:justify; text-justify:inter-ideograph;">In order to strengthen the connection between layers in FFF process, this project presents a 3D weaving tool The goal of our research is to provide a rule based method to simplify the topology optimization process. We use defeasible logic to decribe the designer's incomplete knowledge as rules. A rule-driven structure evolution framworks is designed to generate satisfied structure. By using this design pattern, the design knowledge can be saved, translated, and accumulated.</p>
+    <span><a href="https://github.com/fly2mars/suMasTo">Project page</a></span><br>
+  </div>
+</td>
+
+</tr>
+</tbody></table>
+
+<h3 id='recent-publications'><span>Recent Publications</span></h3>
+
+<ol style="text-align:justify; text-justify:inter-ideograph;">
+<li>Yuan Yao, Longyu Cheng, Zhengyu Li, A Comparative Review of Multi-Axis 3D Printing. Journal of Manufacturing Processes, 2024. In Press..</li>
+<li>Ao Liu, Yifan Zhang, Yuan Yao. Digital twins for hand gesture-guided human-robot collaboration systems. Proceedings of the Institution of Mechanical Engineers, Part B: Journal of Engineering Manufacture, 2024: 09544054231223783.  <a href="https://journals.sagepub.com/doi/abs/10.1177/09544054231223783">paper</a></li>
+<li>Jinxiu Yang, Yingxin Ma, Ling Chen, Lijing Zhang, Huanxiao Wu, Yuan Yao, An adaptive matrix material extrusion optimization model for in situ impregnated continuous fiber-reinforced 3D printing, The International Journal of Advanced Manufacturing Technology, 2023, 129:1527–1545. <a href="https://link.springer.com/article/10.1007/s00170-023-12284-2?utm_source=xmol&utm_medium=affiliate&utm_content=meta&utm_campaign=DDCN_1_GL01_metadata">paper</a></li>
+<li>Yingxin Ma, Jinxiu Yang, Hang Zhang, Yuan Yao, Beishui Liao, Global Continuous Toolpath Planning with Controllable Local Directions. Computer-aided Design, 2023，164, 1035932023.  <a href="https://www.sciencedirect.com/science/article/abs/pii/S0010448523001252">paper</a>. </li>
+<li>Hang Zhang, Yuan Yao, Yingxin Ma, Maximilian Lackner, Yunliang Jiang, A 3D printing tool-path generation strategy based on the partition of principal stress field for FFF Platform, The International Journal of Advanced Manufacturing Technology, 2022. <a href="http://links.springernature.com/f/a/lsySZwucKAMkH8ZyCiZYNA~~/AABE5gA~/RgRk6na7P0RcaHR0cHM6Ly90cmVidWNoZXQucHVibGljLnNwcmluZ2VybmF0dXJlLmFwcC9nZXRfY29udGVudC9jMWFlYjk5MS1hNGFmLTQ1MTgtODQzMy0xNWU5YTgxNTlmYjhXA3NwY0IKYwa78QdjN6sJEFISeWFveXVhbkBzaHUuZWR1LmNuWAQAAAct">paper</a></li>
+<li>Wei Wei, Ling Chen, Lijing Zhang, Jinxiu Yang, Yuan Yao, Heng Zhang. An experimental study on the properties changing in recyclable fiber‐reinforced 3D printing. Polymer Composites, 2022.  <a href="https://onlinelibrary.wiley.com/doi/10.1002/pc.26781">paper</a></li>
+<li>Yuan Yao, Cheng Ding, Mohamed Aburaia, Maximilian Lackner, Lanlan He. A 3D weaving infill pattern for fused filament fabrication. The International Journal of Advanced Manufacturing Technology, 2021, 117: 3101–3114.  <a href=" https://link.springer.com/article/10.1007/s00170-021-07694-z">paper</a></li>
+<li>Yuan Yao, Yichi Zhang, Mohamed Aburaia, Maximilian Lackner. 3D Printing of Objects with Continuous Spatial Paths by a Multi-Axis Robotic FFF Platform. Applied Sciences, 2021, 11(11): 4825.<a href=" https://doi.org/10.3390/app11114825"> paper</a></li>
+<li>Xiao Chen, Yuan Yao, Suihong Liu, Qingxi Hu, An integrated strategy for designing and fabricating triple-layer vascular graft with oriented microgrooves to promote endothelialization, Journal of Biomaterials Applications, 2021, 36(2):297-310. <a href="https://doi.org/10.1177/08853282211001006"> paper</a></li>
+<li>Yuan Yao, Meng Li, Maximilian Lackner, Lammer Herfried. A Continuous Fiber-Reinforced Additive Manufacturing Processing Based on PET Fiber and PLA. MATERIALS, 2020, 13(14): 3044.   <a href=" https://github.com/fly2mars/suCAM/tree/master/python/tools/FFFContinuousPath">code</a>
+</li>
+<li>Huijuan Qiu, Yuan Yao. Rule-based Distribute Topology Optimization. 2020 3rd International Conference on Robot Systems and Applications(ICRSA 2020); Chengdu, China. Association for Computing Machinery, 2020. 45-49.</li>
+<li>Huifeng Wu, Danfeng Sun, Lan Peng, Yuan Yao, Jia Wu, Quan Z. Sheng, Yi Yan. Dynamic Edge Access System in IoT Environment, IEEE Internet of Things Journal, 2019, 7(4): 2509-2520. <a href="https://ieeexplore.ieee.org/document/8848438">paper</a></li>
+<li>Gang Li, Yuan Yao. Manufacturable Gradient-Variable Cellular Structures Design. IOP Conference Series: Materials Science and Engineering. 2019, 692(1), IOP Publishing.</li>
+<li>Yang Gao, Yuan Yao, and Yunliang Jiang. Multi-target 3D Reconstruction from RGB-D Data. Proceedings of the 2nd International Conference on Computer Science and Software Engineering. 2019.</li>
+<li>Shusen Sun, Yuan Yao, and Yunliang Jiang. A 3D Continuous Path Generation Method and Evaluation for Fused Deposition Manufacturing in Tissue Engineering. Journal of Biomaterials and Tissue Engineering, 2019, 9(3): 273-282.</li>
+</li></ol><p><span>  </span><a href = "https://scholar.google.com/citations?user=7CCyy10AAAAJ&hl=en"><span>&gt;&gt;&gt;...</span></a></p>
+
+<h3 id='teaching'><span>Teaching</span></h3>
+<ul>
+<li><span>3ZS092008 建模与仿真(Modeling and Simulation)，</span><a href='courses/sim/2020Au/index.html'><span>2020秋</span></a><span>，</span><a href='https://mooc1-1.chaoxing.com/course/219558846.html'><span>2021秋</span></a>
+<a href='courses/sim/2022Au/index.html'><span>，2022秋</span></a><a href='courses/sim/2023Au/index.html'><span>，2023秋</span></a><span>
+</li>
+<li><span>3XS091017 数据建模与分析(Data Modeling and Analyzing)，</span><a href='courses/dam/2020Au/index.html'><span>2020秋</span></a><span>，</span><a href='https://mooc1-1.chaoxing.com/course/219557466.html'><span>2021秋</span></a>
+<a href='courses/dam/2022Au/index.html'><span>，2022秋</span></a><a href='courses/dam/2023Au/index.html'><span>，2023秋</span></a><span>
+</li>
+<li><span>0900L605 数字时代的学习(Digital Age Learning) ，</span>
+<a href='courses/dl/2020Au/index.html'><span>2020秋</span></a><span>，
+</span><a href='courses/dl/2020Win/index.html'><span>2020冬</span></a><span>，
+</span><a href='courses/dl/2021Spr/index.html'><span>2021春</span></a><span>，
+</span><a href='https://mooc1-1.chaoxing.com/course/219549071.html'><span>2021秋</span></a><span> ，
+</span><a href='courses/dl/2021Win/index.html'><span>2021冬</span></a><span> </span>
+<a href='courses/dl/2022Au/index.html'><span>，2022秋</span></a><span> </span>
+<a href='courses/dl/2022Spr/index.html'><span>，2022冬</span></a><span> </span> ，
+<a href='courses/dl/2023Au/index.html'><span>2023秋</span></a><span>，</span>
+<a href='courses/dl/2023Win/index.html'><span>2023冬</span></a>
+ </li>
+</ul>
+
+<h3 id='seminar'><span>Seminar</span></h3>
+<ul>
+<li><a href='https://efficient-flannel-b81.notion.site/4a9870138d674cafbb9f374957a8ce0b?v=45308fcb02ae423c8004702cab0073f3'><span>每周报告</span></a></li>
+<li><a href='https://61c233af.wiz03.com/wapp/pages/view/share/s/1xMzeL2ajAiy2Lt0Au0S9Y3e2DVQmU2dUkEx27tx6s2TY8jL'><span>AM文献报告</span></a></li>
+</ul>
+
+<hr /><h3 id='新生参考'><span>新生参考</span></h3>
+<ul>
+<li><p><span>计算机图形学： </span><a href='http://staff.ustc.edu.cn/~lgliu/Resources/CG/What_is_CG.htm'><span>中国科大刘利刚老师提供的入门教程。</span></a><span></p></li>
+<li><p><a href='http://staff.ustc.edu.cn/~lgliu/Resources/CG/3D_modeling.htm'><span>3D建模与处理软件简介</span></a><span> 对于机械，増材制造和组织修复专业的学生，应熟练掌握Cura和通用CAD/CAM工具中的一种。</span></p></li>
+<li><p><a href='http://www.pmp-book.org/'><span>多边形网格处理</span></a><span> 由</span><a href='http://graphics.uni-bielefeld.de/people/botsch.php'><span>Mario Botsch</span></a><span>、</span><a href='http://lgg.epfl.ch/'><span>Mark Pauly</span></a><span> 等人在EG2008年上做的多边形网格处理教程整理而来，涵盖三/四角网格的表达、微分几何基础、平滑、参数化、变形和修复等内容，包含基于Openmesh和OpenGL的演示代码。</span></p></li>
+<li><p><span>与Mesh相关几何处理开发库，学习前建议首先学会使用构建工具</span><a href='https://cmake.org/'><span>CMake</span></a><span>，编程IDE </span><a href='https://visualstudio.microsoft.com/zh-hans/vs/older-downloads/'><span>Visual Studio</span></a><span>和版本管理工具</span><a href='https://gitforwindows.org/'><span>Git</span></a></p>
+  <ul>
+  <li><a href='http://libigl.github.io'><span>libigl</span></a><span> </span></li>
+  <li><a href='https://www.openmesh.org/'><span>OpenMesh</span></a></li>
+  <li><a href='http://www.angusj.com/delphi/clipper.php'><span>CLipper</span></a></li>
+  <li><a href='www.cgal.org/'><span>The Computational Geometry Algorithms Library, CGAL</span></a><span>  </span></li>
+  </ul>
+</li>
+<li><p><a href='http://61c233af.wiz03.com/share/s/1xMzeL2ajAiy2Lt0Au0S9Y3e1yE8jw15_AOC2hz7J71wrIe0'><span>Git使用</span></a></p></li>
+<li><p><span>阅读与撰写</span></p>
+   <ul>
+   <li><a href='http://61c233af.wiz03.com/share/s/1xMzeL2ajAiy2Lt0Au0S9Y3e3ZLcnb3kckH_2U97ql1mT8C2'><span>Latex写作</span></a></li>
+   <li><a href='https://dissertationgenius.com/avoiding-common-errors-literature-review'><span>文献综述</span></a><span> </span></li>
+   <li><a href='https://61c233af.wiz03.com/wapp/pages/view/share/s/1xMzeL2ajAiy2Lt0Au0S9Y3e3N0B3309bQPm2UnHbW3HL7Om'><span>文献阅读</span></a><span> </span></li>
+   </ul>
+</li>
+
+<li><p><span>Recommended Courses</span>
+   <ul>
+   <li><a href='https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html'><span>现代计算机图形学入门</span></a><span>,GAMES101- UCSB闫令琪老师2020 年春季课程</span></p>
+   <li><span>(EDX课程) </span><a href='https://edge.edx.org/courses/NarwhalEdu/E101/2014_Spring/about'><span>Introduction to Engineering with Robot Arms</span></a><span> </span></li>
+   <li><span>(Future Learn课程) </span><a href='https://www.futurelearn.com/courses/bioprinting/7/steps/233329'><span>BIOPRINTING: 3D PRINTING BODY PARTS</span></a></li>
+   <li><span>(Udacity课程) </span><a href='https://classroom.udacity.com/courses/ud775'><span>如何使用Git和GitHub</span></a></li></ul></li></ul>
+
+<h3 id='recent-call-for-paper'><span>Recent Call For Paper</span></h3><ul><li><a href='http://www.wikicfp.com/cfp/'><span>wikicfp</span></a></li>
+  <li><span><a href="https://event.asme.org/MSEC/Program/Call-for-Papers">ASME</a></span></li>
+  <li><a href="https://www.sciencedirect.com/journal/computer-aided-design/about/forthcoming-special-issues?CMX_ID=&SIS_ID=&dgcid=STMJ_174507_CALLP_HYB&utm_acid=107309108&utm_campaign=STMJ_174507_CALLP_HYB&utm_in=DM269898&utm_medium=email&utm_source=AC_">Special Issue on Multi-axis Additive Manufacturing</a></li>
+</ul>
+<p></div></p>
+</div> 	 <!--end body_wraper-->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a2df67d71dd37dac0037db539bc04cb4";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+</div></div>
+</body>
+</html>
